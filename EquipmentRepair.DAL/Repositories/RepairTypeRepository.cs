@@ -102,4 +102,38 @@ public class RepairTypeRepository
             }
         }
     }
+    // Get a single RepairType by ID
+    public RepairType GetRepairTypeByID(int repairTypeId)
+    {
+        RepairType repairType = null;
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = SqlQueries.SelectRepairTypeByID; // Обязательно добавьте этот запрос в ваш SqlQueries класс
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@RepairTypeID", repairTypeId);
+
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        repairType = new RepairType
+                        {
+                            RepairTypeID = reader.GetInt32(0),
+                            Name = reader.GetString(1),
+                            Duration = reader.GetInt32(2),
+                            Cost = reader.GetDecimal(3),
+                            Notes = reader.IsDBNull(4) ? null : reader.GetString(4)
+                        };
+                    }
+                }
+            }
+        }
+
+        return repairType;
+    }
+
 }

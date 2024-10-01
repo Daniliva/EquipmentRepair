@@ -10,7 +10,10 @@ internal static class SqlQueries
     public const string SelectAllRepairTypes = @"
         SELECT RepairTypeID, Name, Duration, Cost, Notes
         FROM RepairTypes;";
-
+    public const string SelectRepairTypeByID = @"
+        SELECT RepairTypeID, Name, Duration, Cost, Notes 
+        FROM RepairTypes 
+        WHERE RepairTypeID = @RepairTypeID";
     public const string UpdateRepairType = @"
         UPDATE RepairTypes
         SET Name = @Name, Duration = @Duration, Cost = @Cost, Notes = @Notes
