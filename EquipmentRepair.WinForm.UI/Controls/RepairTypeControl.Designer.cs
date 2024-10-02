@@ -42,8 +42,10 @@ namespace EquipmentRepair.WinForm.UI.Controls
             buttonUpdate = new MaterialSkin2DotNet.Controls.MaterialButton();
             buttonAdd = new MaterialSkin2DotNet.Controls.MaterialButton();
             listBoxRepairTypes = new MaterialSkin2DotNet.Controls.MaterialListView();
+            materialCard3 = new MaterialSkin2DotNet.Controls.MaterialCard();
             materialCard2.SuspendLayout();
             materialCard1.SuspendLayout();
+            materialCard3.SuspendLayout();
             SuspendLayout();
             // 
             // materialCard2
@@ -56,12 +58,12 @@ namespace EquipmentRepair.WinForm.UI.Controls
             materialCard2.Controls.Add(textBoxName);
             materialCard2.Depth = 0;
             materialCard2.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard2.Location = new Point(14, 243);
+            materialCard2.Location = new Point(28, 243);
             materialCard2.Margin = new Padding(14);
             materialCard2.MouseState = MouseState.HOVER;
             materialCard2.Name = "materialCard2";
             materialCard2.Padding = new Padding(14);
-            materialCard2.Size = new Size(550, 125);
+            materialCard2.Size = new Size(489, 125);
             materialCard2.TabIndex = 6;
             // 
             // textBoxCost
@@ -81,7 +83,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
             textBoxCost.HideSelection = true;
             textBoxCost.InsertKeyMode = InsertKeyMode.Default;
             textBoxCost.LeadingIcon = null;
-            textBoxCost.Location = new Point(248, 7);
+            textBoxCost.Location = new Point(248, 8);
             textBoxCost.Mask = "";
             textBoxCost.MaxLength = 32767;
             textBoxCost.MouseState = MouseState.OUT;
@@ -124,7 +126,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
             textBoxNotes.HideSelection = true;
             textBoxNotes.InsertKeyMode = InsertKeyMode.Default;
             textBoxNotes.LeadingIcon = null;
-            textBoxNotes.Location = new Point(248, 61);
+            textBoxNotes.Location = new Point(248, 62);
             textBoxNotes.Mask = "";
             textBoxNotes.MaxLength = 32767;
             textBoxNotes.MouseState = MouseState.OUT;
@@ -248,7 +250,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
             materialCard1.Controls.Add(buttonAdd);
             materialCard1.Depth = 0;
             materialCard1.ForeColor = Color.FromArgb(222, 0, 0, 0);
-            materialCard1.Location = new Point(571, 14);
+            materialCard1.Location = new Point(536, 14);
             materialCard1.Margin = new Padding(14);
             materialCard1.MouseState = MouseState.HOVER;
             materialCard1.Name = "materialCard1";
@@ -341,10 +343,11 @@ namespace EquipmentRepair.WinForm.UI.Controls
             // 
             listBoxRepairTypes.AutoSizeTable = true;
             listBoxRepairTypes.BackColor = Color.FromArgb(255, 255, 255);
-            listBoxRepairTypes.BorderStyle = BorderStyle.FixedSingle;
+            listBoxRepairTypes.BorderStyle = BorderStyle.None;
             listBoxRepairTypes.Depth = 0;
             listBoxRepairTypes.FullRowSelect = true;
-            listBoxRepairTypes.Location = new Point(14, 14);
+            listBoxRepairTypes.ImeMode = ImeMode.Alpha;
+            listBoxRepairTypes.Location = new Point(17, 17);
             listBoxRepairTypes.MinimumSize = new Size(200, 100);
             listBoxRepairTypes.MouseLocation = new Point(-1, -1);
             listBoxRepairTypes.MouseState = MouseState.OUT;
@@ -352,16 +355,31 @@ namespace EquipmentRepair.WinForm.UI.Controls
             listBoxRepairTypes.OwnerDraw = true;
             listBoxRepairTypes.Scrollable = false;
             listBoxRepairTypes.ShowItemToolTips = true;
-            listBoxRepairTypes.Size = new Size(550, 220);
+            listBoxRepairTypes.Size = new Size(200, 100);
             listBoxRepairTypes.TabIndex = 7;
             listBoxRepairTypes.UseCompatibleStateImageBehavior = false;
             listBoxRepairTypes.View = View.Details;
+            // 
+            // materialCard3
+            // 
+            materialCard3.BackColor = Color.FromArgb(255, 255, 255);
+            materialCard3.BorderStyle = BorderStyle.FixedSingle;
+            materialCard3.Controls.Add(listBoxRepairTypes);
+            materialCard3.Depth = 0;
+            materialCard3.ForeColor = Color.FromArgb(222, 0, 0, 0);
+            materialCard3.Location = new Point(28, 14);
+            materialCard3.Margin = new Padding(14);
+            materialCard3.MouseState = MouseState.HOVER;
+            materialCard3.Name = "materialCard3";
+            materialCard3.Padding = new Padding(14);
+            materialCard3.Size = new Size(489, 220);
+            materialCard3.TabIndex = 7;
             // 
             // RepairTypeControl
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(listBoxRepairTypes);
+            Controls.Add(materialCard3);
             Controls.Add(materialCard2);
             Controls.Add(materialCard1);
             Name = "RepairTypeControl";
@@ -369,6 +387,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
             materialCard2.ResumeLayout(false);
             materialCard1.ResumeLayout(false);
             materialCard1.PerformLayout();
+            materialCard3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -385,5 +404,6 @@ namespace EquipmentRepair.WinForm.UI.Controls
         private MaterialSkin2DotNet.Controls.MaterialButton buttonUpdate;
         private MaterialSkin2DotNet.Controls.MaterialButton buttonAdd;
         private MaterialSkin2DotNet.Controls.MaterialListView listBoxRepairTypes;
+        private MaterialSkin2DotNet.Controls.MaterialCard materialCard3;
     }
 }

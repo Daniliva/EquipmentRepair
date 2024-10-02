@@ -9,22 +9,18 @@ namespace EquipmentRepair.WinForm.UI
 {
     public partial class MainForm : MaterialForm
     {
-        private readonly MaterialSkinManager materialSkinManager;
-        private bool isDarkTheme = false;
-        private readonly RepairTypeRepository repairTypeRepo;
+        private readonly MaterialSkinManager _materialSkinManager;
+        private bool _isDarkTheme = false;
+
         public MainForm()
         {
-            
-            
-            repairTypeRepo = new RepairTypeRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
-
-            materialSkinManager = MaterialSkinManager.Instance;
-            materialSkinManager.AddFormToManage(this);
-            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            _materialSkinManager = MaterialSkinManager.Instance;
+            _materialSkinManager.AddFormToManage(this);
+            _materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
 
 
             
-            materialSkinManager.ColorScheme = new ColorScheme(
+            _materialSkinManager.ColorScheme = new ColorScheme(
                 Primary.Green400, Primary.Green500,
                 Primary.Green200, Accent.LightGreen200,
                 TextShade.WHITE);
@@ -37,24 +33,24 @@ namespace EquipmentRepair.WinForm.UI
 
         private void ThemeToggleButton_Click(object sender, EventArgs e)
         {
-            if (isDarkTheme)
+            if (_isDarkTheme)
             {
-                materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
-                materialSkinManager.ColorScheme = new ColorScheme(
+                _materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+                _materialSkinManager.ColorScheme = new ColorScheme(
                     Primary.Green400, Primary.Green500,
                     Primary.Green200, Accent.LightGreen200,
                     TextShade.WHITE);
             }
             else
             {
-                materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
-                materialSkinManager.ColorScheme = new ColorScheme(
+                _materialSkinManager.Theme = MaterialSkinManager.Themes.DARK;
+                _materialSkinManager.ColorScheme = new ColorScheme(
                     Primary.BlueGrey800, Primary.BlueGrey900,
                     Primary.BlueGrey500, Accent.LightBlue200,
                     TextShade.WHITE);
             }
             
-                        isDarkTheme = !isDarkTheme;
+                        _isDarkTheme = !_isDarkTheme;
         }
 
 
