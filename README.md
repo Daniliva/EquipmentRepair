@@ -92,5 +92,5 @@ CREATE TABLE RepairRecords (
 - Use the user interface to manage equipment types, repair types, and repair records.
 - Navigate through the application to add, update, or delete records as needed.
 
-```
+
 
