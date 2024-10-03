@@ -5,6 +5,7 @@ using MaterialSkin2DotNet;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -21,7 +22,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
 
         public EquipmentTypeControl()
         {
-            _equipmentTypeRepo = new EquipmentTypeRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
+            _equipmentTypeRepo = new EquipmentTypeRepository(ConfigurationManager.ConnectionStrings["RepairDatabase"].ConnectionString);
             InitializeComponent();
             InitializeListView();
             LoadEquipmentTypes();

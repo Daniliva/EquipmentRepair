@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Drawing;
 using System.Data;
 using System.Linq;
@@ -26,9 +27,9 @@ namespace EquipmentRepair.WinForm.UI.Controls
 
         public RepairRecordControl()
         {
-            _repairRecordRepo = new RepairRecordRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
-            _equipmentTypeRepo = new EquipmentTypeRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
-            _repairTypeRepo = new RepairTypeRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
+            _repairRecordRepo = new RepairRecordRepository(ConfigurationManager.ConnectionStrings["RepairDatabase"].ConnectionString);
+            _equipmentTypeRepo = new EquipmentTypeRepository(ConfigurationManager.ConnectionStrings["RepairDatabase"].ConnectionString);
+            _repairTypeRepo = new RepairTypeRepository(ConfigurationManager.ConnectionStrings["RepairDatabase"].ConnectionString);
 
             InitializeComponent();
             InitializeListView();

@@ -7,6 +7,7 @@ using System.Windows.Forms;
 using EquipmentRepair.DAL.Entities;
 using MaterialSkin2DotNet;
 using MaterialSkin2DotNet.Controls;
+using System.Configuration;
 
 namespace EquipmentRepair.WinForm.UI.Controls
 {
@@ -16,7 +17,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
 
         public RepairTypeControl()
         {
-            _repairTypeRepo = new RepairTypeRepository("Server=DESKTOP-U9RGK02;Database=Test;Trusted_Connection=True");
+            _repairTypeRepo = new RepairTypeRepository(ConfigurationManager.ConnectionStrings["RepairDatabase"].ConnectionString);
             InitializeComponent();
             InitializeListView();
             LoadRepairTypes();
@@ -32,11 +33,11 @@ namespace EquipmentRepair.WinForm.UI.Controls
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
 
-            listBoxRepairTypes.View = View.Tile;
+            listBoxRepairTypes.View = View.Details;
             listBoxRepairTypes.FullRowSelect = true;
             listBoxRepairTypes.GridLines = true;
             listBoxRepairTypes.HideSelection = false;
-            listBoxRepairTypes.TileSize = new Size(300, 150);
+            //listBoxRepairTypes.TileSize = new Size(300, 150);
             listBoxRepairTypes.Columns.Add("ID", 50);
             listBoxRepairTypes.Columns.Add("Name", 100);
             listBoxRepairTypes.Columns.Add("Duration", 80);

@@ -104,7 +104,7 @@
             // 
             // dateTimePickerStartDate
             // 
-            dateTimePickerStartDate.Location = new Point(18, 61);
+            dateTimePickerStartDate.Location = new Point(14, 86);
             dateTimePickerStartDate.Name = "dateTimePickerStartDate";
             dateTimePickerStartDate.Size = new Size(224, 23);
             dateTimePickerStartDate.TabIndex = 1;
