@@ -31,25 +31,36 @@
             mainlTabControl = new MaterialSkin2DotNet.Controls.MaterialTabControl();
             tabRepairTypes = new TabPage();
             repairTypeControl1 = new Controls.RepairTypeControl();
-            tabPage2 = new TabPage();
+            tabEquipmentType = new TabPage();
+            equipmentTypeControl1 = new Controls.EquipmentTypeControl();
+            tabRepairRecord = new TabPage();
+            repairRecordControl1 = new Controls.RepairRecordControl();
+            tabPage1 = new TabPage();
+            toolStripContainer1 = new ToolStripContainer();
             mainTabSelector = new MaterialSkin2DotNet.Controls.MaterialTabSelector();
             ThemeToggleButton = new MaterialSkin2DotNet.Controls.MaterialButton();
             mainlTabControl.SuspendLayout();
             tabRepairTypes.SuspendLayout();
+            tabEquipmentType.SuspendLayout();
+            tabRepairRecord.SuspendLayout();
+            tabPage1.SuspendLayout();
+            toolStripContainer1.SuspendLayout();
             SuspendLayout();
             // 
             // mainlTabControl
             // 
             mainlTabControl.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             mainlTabControl.Controls.Add(tabRepairTypes);
-            mainlTabControl.Controls.Add(tabPage2);
+            mainlTabControl.Controls.Add(tabEquipmentType);
+            mainlTabControl.Controls.Add(tabRepairRecord);
+            mainlTabControl.Controls.Add(tabPage1);
             mainlTabControl.Depth = 0;
             mainlTabControl.Location = new Point(6, 67);
             mainlTabControl.MouseState = MaterialSkin2DotNet.MouseState.HOVER;
             mainlTabControl.Multiline = true;
             mainlTabControl.Name = "mainlTabControl";
             mainlTabControl.SelectedIndex = 0;
-            mainlTabControl.Size = new Size(873, 677);
+            mainlTabControl.Size = new Size(873, 493);
             mainlTabControl.TabIndex = 0;
             // 
             // tabRepairTypes
@@ -61,7 +72,7 @@
             tabRepairTypes.Location = new Point(4, 24);
             tabRepairTypes.Name = "tabRepairTypes";
             tabRepairTypes.Padding = new Padding(3);
-            tabRepairTypes.Size = new Size(865, 649);
+            tabRepairTypes.Size = new Size(865, 465);
             tabRepairTypes.TabIndex = 0;
             tabRepairTypes.Text = "Repair Types";
             // 
@@ -72,15 +83,63 @@
             repairTypeControl1.Size = new Size(851, 454);
             repairTypeControl1.TabIndex = 0;
             // 
-            // tabPage2
+            // tabEquipmentType
             // 
-            tabPage2.BackColor = Color.White;
-            tabPage2.Location = new Point(4, 24);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(865, 649);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "tabPage2";
+            tabEquipmentType.BackColor = Color.White;
+            tabEquipmentType.Controls.Add(equipmentTypeControl1);
+            tabEquipmentType.Location = new Point(4, 24);
+            tabEquipmentType.Name = "tabEquipmentType";
+            tabEquipmentType.Padding = new Padding(3);
+            tabEquipmentType.Size = new Size(865, 465);
+            tabEquipmentType.TabIndex = 1;
+            tabEquipmentType.Text = "Equipment Type";
+            // 
+            // equipmentTypeControl1
+            // 
+            equipmentTypeControl1.Location = new Point(9, 11);
+            equipmentTypeControl1.Name = "equipmentTypeControl1";
+            equipmentTypeControl1.Size = new Size(727, 448);
+            equipmentTypeControl1.TabIndex = 0;
+            // 
+            // tabRepairRecord
+            // 
+            tabRepairRecord.BackColor = Color.White;
+            tabRepairRecord.Controls.Add(repairRecordControl1);
+            tabRepairRecord.Location = new Point(4, 24);
+            tabRepairRecord.Name = "tabRepairRecord";
+            tabRepairRecord.Size = new Size(865, 465);
+            tabRepairRecord.TabIndex = 2;
+            tabRepairRecord.Text = "Reapair Record";
+            // 
+            // repairRecordControl1
+            // 
+            repairRecordControl1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            repairRecordControl1.Location = new Point(18, 11);
+            repairRecordControl1.Name = "repairRecordControl1";
+            repairRecordControl1.Size = new Size(728, 451);
+            repairRecordControl1.TabIndex = 0;
+            // 
+            // tabPage1
+            // 
+            tabPage1.BackColor = Color.White;
+            tabPage1.Controls.Add(toolStripContainer1);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Name = "tabPage1";
+            tabPage1.Size = new Size(865, 465);
+            tabPage1.TabIndex = 3;
+            tabPage1.Text = "tabPage1";
+            // 
+            // toolStripContainer1
+            // 
+            // 
+            // toolStripContainer1.ContentPanel
+            // 
+            toolStripContainer1.ContentPanel.Size = new Size(8, 0);
+            toolStripContainer1.Location = new Point(429, 164);
+            toolStripContainer1.Name = "toolStripContainer1";
+            toolStripContainer1.Size = new Size(8, 8);
+            toolStripContainer1.TabIndex = 0;
+            toolStripContainer1.Text = "toolStripContainer1";
             // 
             // mainTabSelector
             // 
@@ -132,7 +191,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            ClientSize = new Size(1051, 750);
+            ClientSize = new Size(1051, 566);
             Controls.Add(ThemeToggleButton);
             Controls.Add(mainTabSelector);
             Controls.Add(mainlTabControl);
@@ -141,6 +200,11 @@
             Text = "Equipment Repair";
             mainlTabControl.ResumeLayout(false);
             tabRepairTypes.ResumeLayout(false);
+            tabEquipmentType.ResumeLayout(false);
+            tabRepairRecord.ResumeLayout(false);
+            tabPage1.ResumeLayout(false);
+            toolStripContainer1.ResumeLayout(false);
+            toolStripContainer1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -149,9 +213,14 @@
 
         private MaterialSkin2DotNet.Controls.MaterialTabControl mainlTabControl;
         private TabPage tabRepairTypes;
-        private TabPage tabPage2;
+        private TabPage tabEquipmentType;
         private MaterialSkin2DotNet.Controls.MaterialTabSelector mainTabSelector;
         private MaterialSkin2DotNet.Controls.MaterialButton ThemeToggleButton;
         private Controls.RepairTypeControl repairTypeControl1;
+        private Controls.EquipmentTypeControl equipmentTypeControl1;
+        private TabPage tabRepairRecord;
+        private TabPage tabPage1;
+        private ToolStripContainer toolStripContainer1;
+        private Controls.RepairRecordControl repairRecordControl1;
     }
 }

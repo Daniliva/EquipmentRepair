@@ -31,7 +31,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
                 Primary.Blue500, Accent.LightBlue200,
                 TextShade.WHITE);
 
-            listBoxRepairTypes.View = View.Details;
+            listBoxRepairTypes.View = View.Tile;
             listBoxRepairTypes.FullRowSelect = true;
             listBoxRepairTypes.GridLines = true;
             listBoxRepairTypes.HideSelection = false;
@@ -67,7 +67,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
             string notes = textBoxNotes.Text;
 
             _repairTypeRepo.AddRepairType(name, duration, cost, notes);
-            MaterialMessageBox.Show("Repair Type added successfully.");
+            MaterialMessageBox.Show("Repair Type added successfully.", "Repair Type added successfully.");
             LoadRepairTypes();
         }
         private void buttonGet_Click(object sender, EventArgs e)

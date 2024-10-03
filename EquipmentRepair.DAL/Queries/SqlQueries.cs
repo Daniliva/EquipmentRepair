@@ -31,7 +31,10 @@ internal static class SqlQueries
     public const string SelectAllEquipmentTypes = @"
         SELECT EquipmentTypeID, Country, ManufactureYear, Brand
         FROM EquipmentTypes;";
-
+    public const string SelectEquipmentTypesId = @"
+        SELECT EquipmentTypeID, Country, ManufactureYear, Brand
+        FROM EquipmentTypes 
+        WHERE EquipmentTypeID = @EquipmentTypeID";
     public const string UpdateEquipmentType = @"
         UPDATE EquipmentTypes
         SET Country = @Country, ManufactureYear = @ManufactureYear, Brand = @Brand
@@ -58,4 +61,9 @@ internal static class SqlQueries
     public const string DeleteRepairRecord = @"
         DELETE FROM RepairRecords
         WHERE RegistrationNumber = @RegistrationNumber;";
+
+    public static string SelectRepairRecordId = @"
+        SELECT RegistrationNumber, EquipmentTypeID, RepairTypeID, StartDate, RepairQuality
+        FROM RepairRecords;
+        WHERE RegistrationNumber = @RegistrationNumber";
 }

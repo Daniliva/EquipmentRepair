@@ -64,7 +64,37 @@ public class EquipmentTypeRepository
 
         return equipmentTypes;
     }
+    public EquipmentType GetEquipmentTypeByID(int equipmentTypeId)
+    {
+        EquipmentType equipmentType = null;
 
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = SqlQueries.SelectEquipmentTypesId;
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@EquipmentTypeID", equipmentTypeId);
+
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        equipmentType = new EquipmentType
+                        {
+                            EquipmentTypeID = reader.GetInt32(0),
+                            Country = reader.GetString(1),
+                            ManufactureYear = reader.GetInt32(2),
+                            Brand = reader.GetString(3)
+                        };
+                    }
+                }
+            }
+        }
+
+        return equipmentType;
+    }
     // Update
     public void UpdateEquipmentType(int equipmentTypeId, string country, int manufactureYear, string brand)
     {

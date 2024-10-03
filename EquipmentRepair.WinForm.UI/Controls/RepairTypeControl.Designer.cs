@@ -341,27 +341,31 @@ namespace EquipmentRepair.WinForm.UI.Controls
             // 
             // listBoxRepairTypes
             // 
-            listBoxRepairTypes.AutoSizeTable = true;
+            listBoxRepairTypes.AccessibleRole = AccessibleRole.Table;
+            listBoxRepairTypes.AutoSizeTable = false;
             listBoxRepairTypes.BackColor = Color.FromArgb(255, 255, 255);
             listBoxRepairTypes.BorderStyle = BorderStyle.None;
+            listBoxRepairTypes.CausesValidation = false;
             listBoxRepairTypes.Depth = 0;
             listBoxRepairTypes.FullRowSelect = true;
-            listBoxRepairTypes.ImeMode = ImeMode.Alpha;
-            listBoxRepairTypes.Location = new Point(17, 17);
-            listBoxRepairTypes.MinimumSize = new Size(200, 100);
+            listBoxRepairTypes.ImeMode = ImeMode.Close;
+            listBoxRepairTypes.Location = new Point(14, 12);
+            listBoxRepairTypes.MaximumSize = new Size(417, 200);
+            listBoxRepairTypes.MinimumSize = new Size(415, 200);
             listBoxRepairTypes.MouseLocation = new Point(-1, -1);
             listBoxRepairTypes.MouseState = MouseState.OUT;
             listBoxRepairTypes.Name = "listBoxRepairTypes";
             listBoxRepairTypes.OwnerDraw = true;
-            listBoxRepairTypes.Scrollable = false;
             listBoxRepairTypes.ShowItemToolTips = true;
-            listBoxRepairTypes.Size = new Size(200, 100);
+            listBoxRepairTypes.Size = new Size(417, 200);
+            listBoxRepairTypes.Sorting = SortOrder.Ascending;
             listBoxRepairTypes.TabIndex = 7;
             listBoxRepairTypes.UseCompatibleStateImageBehavior = false;
-            listBoxRepairTypes.View = View.Details;
+            listBoxRepairTypes.View = View.Tile;
             // 
             // materialCard3
             // 
+            materialCard3.AutoScroll = true;
             materialCard3.BackColor = Color.FromArgb(255, 255, 255);
             materialCard3.BorderStyle = BorderStyle.FixedSingle;
             materialCard3.Controls.Add(listBoxRepairTypes);
@@ -403,7 +407,7 @@ namespace EquipmentRepair.WinForm.UI.Controls
         private MaterialSkin2DotNet.Controls.MaterialButton buttonDelete;
         private MaterialSkin2DotNet.Controls.MaterialButton buttonUpdate;
         private MaterialSkin2DotNet.Controls.MaterialButton buttonAdd;
-        private MaterialSkin2DotNet.Controls.MaterialListView listBoxRepairTypes;
         private MaterialSkin2DotNet.Controls.MaterialCard materialCard3;
+        public MaterialSkin2DotNet.Controls.MaterialListView listBoxRepairTypes;
     }
 }

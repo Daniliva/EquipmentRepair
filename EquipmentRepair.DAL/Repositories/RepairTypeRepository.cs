@@ -109,7 +109,7 @@ public class RepairTypeRepository
 
         using (SqlConnection connection = new SqlConnection(_connectionString))
         {
-            string query = SqlQueries.SelectRepairTypeByID; // Обязательно добавьте этот запрос в ваш SqlQueries класс
+            string query = SqlQueries.SelectRepairTypeByID; 
 
             using (SqlCommand command = new SqlCommand(query, connection))
             {

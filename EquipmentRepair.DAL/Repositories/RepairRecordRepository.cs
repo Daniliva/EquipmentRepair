@@ -102,4 +102,37 @@ public class RepairRecordRepository
             }
         }
     }
+
+    public RepairRecord GetRepairRecordByID(int registrationNumber)
+    {
+        RepairRecord repairRecord = null;
+
+        using (SqlConnection connection = new SqlConnection(_connectionString))
+        {
+            string query = SqlQueries.SelectRepairRecordId;
+
+            using (SqlCommand command = new SqlCommand(query, connection))
+            {
+                command.Parameters.AddWithValue("@RegistrationNumber", registrationNumber);
+
+                connection.Open();
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                         repairRecord = new RepairRecord
+                        {
+                            RegistrationNumber = reader.GetInt32(0),
+                            EquipmentTypeID = reader.GetInt32(1),
+                            RepairTypeID = reader.GetInt32(2),
+                            StartDate = reader.GetDateTime(3),
+                            RepairQuality = reader.IsDBNull(4) ? null : reader.GetString(4)
+                        };
+                    }
+                }
+            }
+        }
+
+        return repairRecord;
+    }
 }
