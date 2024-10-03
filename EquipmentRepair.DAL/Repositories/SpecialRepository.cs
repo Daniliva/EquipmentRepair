@@ -1,4 +1,5 @@
 ﻿using System.Data.SqlClient;
+using EquipmentRepair.DAL.Entities;
 using EquipmentRepair.DAL.Queries;
 
 namespace EquipmentRepair.DAL.Repositories;

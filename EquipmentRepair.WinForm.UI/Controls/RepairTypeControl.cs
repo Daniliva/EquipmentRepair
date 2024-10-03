@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using EquipmentRepair.DAL.Entities;
 using MaterialSkin2DotNet;
 using MaterialSkin2DotNet.Controls;
 

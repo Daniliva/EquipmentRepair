@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EquipmentRepair.DAL.Repositories;
 using EquipmentRepair.DAL;
+using EquipmentRepair.DAL.Entities;
 using MaterialSkin2DotNet.Controls;
 using MaterialSkin2DotNet;
 

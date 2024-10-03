@@ -1,4 +1,4 @@
-﻿namespace EquipmentRepair.DAL;
+﻿namespace EquipmentRepair.DAL.Entities;
 
 public class RepairCountByEquipment
 {

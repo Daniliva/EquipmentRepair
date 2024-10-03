@@ -3,6 +3,8 @@ using System;
 using System.Data;
 using System.Data.SqlClient;
 using System.Collections.Generic;
+using EquipmentRepair.DAL.Entities;
+
 namespace EquipmentRepair.DAL.Repositories;
 
 public class EquipmentTypeRepository
